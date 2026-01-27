@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/java/mysql-connector-j-9.5.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/Java Project/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/Java Project/commons-compress-1.21.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/Java Project/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/Java Project/poi-5.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/Java Project/poi-ooxml-5.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/Java Project/poi-ooxml-lite-5.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/OneDrive/Desktop/Java Project/xmlbeans-5.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rayan/Downloads/poi-bin-5.2.3-20220909/poi-bin-5.2.3/lib/log4j-api-2.18.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
