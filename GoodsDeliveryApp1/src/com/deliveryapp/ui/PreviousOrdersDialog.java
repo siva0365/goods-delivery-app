@@ -20,7 +20,7 @@ public class PreviousOrdersDialog extends JDialog {
         ) { public boolean isCellEditable(int r,int c){ return false; } };
 
         JTable table = new JTable(tm);
-     // ✅ Make table header bold
+     // Make table header bold
         table.getTableHeader().setFont(
                 table.getTableHeader().getFont().deriveFont(Font.BOLD)
         );

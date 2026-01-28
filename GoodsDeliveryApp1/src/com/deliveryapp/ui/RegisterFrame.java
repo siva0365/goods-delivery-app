@@ -19,7 +19,7 @@ public class RegisterFrame extends JFrame {
 
     private final JComboBox<Role> role = new JComboBox<>(Role.values());
 
-    // ✅ Only change: truckPanel uses GridBagLayout so it fits properly without changing your frame size/layout
+    // Only change: truckPanel uses GridBagLayout so it fits properly without changing your frame size/layout
     private final JPanel truckPanel = new JPanel(new GridBagLayout());
     private final JTextField truckNo = new JTextField(22);
     private final JTextField truckCap = new JTextField(22);
@@ -27,7 +27,7 @@ public class RegisterFrame extends JFrame {
     public RegisterFrame() {
         super("Create Account");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(460, 520);            // ✅ keep your original size
+        setSize(460, 520);            
         setLocationRelativeTo(null);
 
         JPanel root = new JPanel(new BorderLayout(12, 12));
@@ -37,7 +37,7 @@ public class RegisterFrame extends JFrame {
         title.setFont(title.getFont().deriveFont(Font.BOLD, 18f));
         root.add(title, BorderLayout.NORTH);
 
-        // ✅ keep your original layout
+        
         JPanel form = new JPanel(new GridLayout(0, 1, 8, 8));
         form.add(labeled("Email", email));
         form.add(labeled("Password (min 5 characters)", pass));
@@ -46,7 +46,7 @@ public class RegisterFrame extends JFrame {
         form.add(labeled("Last Name", lastName));
         form.add(labeled("Role", role));
 
-        // ✅ Truck panel (Driver only) - compact 2 rows so it is fully visible in same dimensions
+        // Truck panel (Driver only) 
         truckPanel.setBorder(BorderFactory.createTitledBorder(""));
 
         GridBagConstraints gc = new GridBagConstraints();
@@ -98,7 +98,7 @@ public class RegisterFrame extends JFrame {
 
         setContentPane(root);
 
-        // ✅ show/hide truck fields based on role
+        // show/hide truck fields based on role
         role.addActionListener(e -> refreshTruckVisibility());
         refreshTruckVisibility();
 
@@ -116,7 +116,7 @@ public class RegisterFrame extends JFrame {
 
         truckPanel.setVisible(isDriver);
 
-        // Optional: clear when not driver so old values don't remain
+        // clear when not driver so old values don't remain
         if (!isDriver) {
             truckNo.setText("");
             truckCap.setText("");
@@ -142,7 +142,7 @@ public class RegisterFrame extends JFrame {
                 throw new IllegalArgumentException("Email is required.");
             }
 
-            // ✅ Gmail-only email validation
+            // Gmail-only email validation
             if (!em.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {
                 throw new IllegalArgumentException("Please enter a valid Gmail address (example@gmail.com).");
             }
@@ -154,24 +154,24 @@ public class RegisterFrame extends JFrame {
 
             String pw = new String(pass.getPassword()).trim();
 
-	         // ✅ 1) required check first
+	         // required check first
 	         if (pw.isEmpty()) {
 	             throw new IllegalArgumentException("Password is required.");
 	         }
 	
-	         // ✅ 2) min length check second (min 5)
+	         // min length check
 	         if (pw.length() < 5) {
 	             throw new IllegalArgumentException("Password is too short.");
 	         }
 
 	         String ph = phone.getText().trim();
 
-		      // ✅ 1) required check
+		      
 		      if (ph.isEmpty()) {
 		          throw new IllegalArgumentException("Phone number is required.");
 		      }
 	
-		      // ✅ 2) numeric-only check
+		      // numeric-only check
 		      if (!ph.matches("\\d+")) {
 		          throw new IllegalArgumentException("Phone number must contain only digits.");
 		      }
@@ -190,7 +190,7 @@ public class RegisterFrame extends JFrame {
             u.lastName = lastName.getText().trim();
             u.role = r;
 
-            // ✅ If Driver, truck details must be entered
+            //If Driver, truck details must be entered
             if (r == Role.DRIVER) {
                 String tNo = truckNo.getText().trim();
                 if (tNo.isEmpty()) throw new IllegalArgumentException("Truck number required for Driver.");

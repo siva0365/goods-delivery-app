@@ -72,7 +72,7 @@ public class LoginFrame extends JFrame {
             String em = email.getText().trim();
             String pwPlain = new String(pass.getPassword()).trim();
 
-            // ✅ 1) Required field validation (NEW)
+            // 1) Required field validation (NEW)
             if (em.isEmpty() || pwPlain.isEmpty()) {
                 JOptionPane.showMessageDialog(
                         this,
@@ -83,7 +83,7 @@ public class LoginFrame extends JFrame {
                 return;
             }
 
-            // ✅ 2) Your existing hashing + login logic (same behavior)
+            // 2) Your existing hashing + login logic (same behavior)
             String ph = PasswordUtil.sha256(pwPlain);
             User u = new UserDAO().login(em, ph);
 

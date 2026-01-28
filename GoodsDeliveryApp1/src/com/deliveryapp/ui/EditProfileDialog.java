@@ -179,7 +179,7 @@ public class EditProfileDialog extends JDialog {
                     return;
                 }
 
-                // ✅ only set if valid
+                // only set if valid
                 u.truckNumber = tNo;
                 u.truckCapacityKg = cap;
             }

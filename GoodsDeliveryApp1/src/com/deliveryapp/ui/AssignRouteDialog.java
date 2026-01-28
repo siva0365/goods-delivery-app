@@ -120,7 +120,7 @@ public class AssignRouteDialog extends JDialog {
 
 
 
-            // ✅ 1) Do not allow duplicates
+            //Do not allow duplicates
             for (int i = 0; i < selectedTM.getRowCount(); i++) {
                 int already = Integer.parseInt(String.valueOf(selectedTM.getValueAt(i, 1)));
                 if (already == deliveryId) {
@@ -129,7 +129,7 @@ public class AssignRouteDialog extends JDialog {
                 }
             }
 
-            // ✅ 2) capacity check using selectedTM qty column (index 3)
+            //capacity check using selectedTM qty column (index 3)
             DriverItem di = (DriverItem) drivers.getSelectedItem();
             int capacity = di.capacityKg;
 
@@ -146,11 +146,11 @@ public class AssignRouteDialog extends JDialog {
                 return;
             }
 
-            // ✅ 3) Add to selectedTM (include qty)
+            // Add to selectedTM (include qty)
             int nextOrder = selectedTM.getRowCount() + 1;
             selectedTM.addRow(new Object[]{nextOrder, deliveryId, addr, newQty});
 
-            // ✅ 4) Remove immediately from pending deliveries (disappear)
+            // Remove immediately from pending deliveries
             deliveriesTM.removeRow(row);
         });
 
@@ -198,7 +198,7 @@ public class AssignRouteDialog extends JDialog {
     }
 
     private void loadDrivers() {
-        drivers.removeAllItems(); // ✅ clear old items
+        drivers.removeAllItems(); //clear old items
         try {
             RouteDAO dao = new RouteDAO();
             for (Object[] row : dao.listDrivers()) {
@@ -207,7 +207,7 @@ public class AssignRouteDialog extends JDialog {
                 int capKg = row[2] == null ? 0 : ((Number) row[2]).intValue();
                 drivers.addItem(new DriverItem(id, label, capKg));
             }
-            drivers.setSelectedIndex(-1); // ✅ no default selection
+            drivers.setSelectedIndex(-1); //no default selection
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -223,7 +223,7 @@ public class AssignRouteDialog extends JDialog {
             for (Delivery x : list) {
                 String st = (x.status == null) ? "" : x.status.trim().toUpperCase();
 
-                // ✅ show only pending-like deliveries
+                // show only pending-like deliveries
                 // Change these values to match your DB statuses
                 boolean isPending =
                         st.equals("PENDING") ||

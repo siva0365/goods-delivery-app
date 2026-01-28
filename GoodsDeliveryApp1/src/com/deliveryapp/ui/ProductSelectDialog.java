@@ -97,7 +97,7 @@ public class ProductSelectDialog extends JDialog {
 
     private void handleSelect(Product p) {
         // Quantity popup
-    	// ✅ Quantity popup (keep asking until valid or cancelled)
+    	// Quantity popup (keep asking until valid or cancelled)
     	Integer qty = null;
 
     	while (qty == null) {
@@ -138,7 +138,7 @@ public class ProductSelectDialog extends JDialog {
     	String addr = null;
     	LocalDate d = null;
 
-    	// ✅ Keep showing delivery details dialog until valid or cancelled
+    	// Keep showing delivery details dialog until valid or cancelled
     	while (addr == null || d == null) {
 
     	    JTextField address = new JTextField();
@@ -158,7 +158,7 @@ public class ProductSelectDialog extends JDialog {
     	    String tempAddr = address.getText().trim();
     	    if (tempAddr.isEmpty()) {
     	        JOptionPane.showMessageDialog(this, "Address is required.");
-    	        continue; // ✅ show dialog again
+    	        continue; // show dialog again
     	    }
 
     	    LocalDate tempDate;
@@ -166,16 +166,16 @@ public class ProductSelectDialog extends JDialog {
     	        tempDate = LocalDate.parse(date.getText().trim());
     	    } catch (Exception ex) {
     	        JOptionPane.showMessageDialog(this, "Date must be yyyy-mm-dd.");
-    	        continue; // ✅ show dialog again
+    	        continue; // show dialog again
     	    }
 
     	    LocalDate today = LocalDate.now();
     	    if (tempDate.isBefore(today)) {
     	        JOptionPane.showMessageDialog(this, "Please select today or a future date.");
-    	        continue; // ✅ show dialog again
+    	        continue; //show dialog again
     	    }
 
-    	    // ✅ valid
+    	    // valid
     	    addr = tempAddr;
     	    d = tempDate;
     	}

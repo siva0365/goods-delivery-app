@@ -67,7 +67,7 @@ public class RouteDAO {
     public List<Object[]> listAssignedMissionsForDriver(int driverId, boolean completed) throws Exception {
         List<Object[]> rows = new java.util.ArrayList<>();
 
-        // ✅ SQL must be inside a Java String
+       
         String sql = """
         	    SELECT
         	        m.id AS mission_id,
@@ -181,7 +181,7 @@ public class RouteDAO {
 
         try (Connection c = DB.get()) {
 
-            // 1) Mark ONLY selected deliveries as delivered
+            // Mark ONLY selected deliveries as delivered
             String sql = "UPDATE deliveries SET status='DELIVERED' WHERE id=?";
             try (PreparedStatement ps = c.prepareStatement(sql)) {
                 for (String s : ids) {
@@ -191,7 +191,7 @@ public class RouteDAO {
                 ps.executeBatch();
             }
 
-            // 2) Find mission_id of these deliveries (all belong to same mission because they are grouped row)
+            //Find mission_id of these deliveries (all belong to same mission because they are grouped row)
             int missionId = -1;
             String findMission = """
                 SELECT m.id AS mission_id
@@ -210,7 +210,7 @@ public class RouteDAO {
 
             if (missionId == -1) return;
 
-            // 3) If ALL deliveries in that mission are DELIVERED, mark mission COMPLETED
+            // If ALL deliveries in that mission are DELIVERED, mark mission COMPLETED
             String checkRemaining = """
                 SELECT COUNT(*) AS remaining
                 FROM missions m

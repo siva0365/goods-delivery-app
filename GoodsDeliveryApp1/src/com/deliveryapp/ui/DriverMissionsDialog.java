@@ -25,7 +25,7 @@ public class DriverMissionsDialog extends JDialog {
                         "Products",
                         "Total Qty (Kg)",
                         "Status",
-                        "Delivery IDs" // ✅ hidden
+                        "Delivery IDs" // hidden
                 }, 0
         ) { public boolean isCellEditable(int r,int c){ return false; } };
 
@@ -92,7 +92,7 @@ public class DriverMissionsDialog extends JDialog {
             int row = table.getSelectedRow();
             if (row < 0) return;
 
-            // ✅ last column = Delivery IDs (hidden)
+            // last column = Delivery IDs (hidden)
             String deliveryIds = String.valueOf(tm.getValueAt(row, tm.getColumnCount() - 1));
 
             try {

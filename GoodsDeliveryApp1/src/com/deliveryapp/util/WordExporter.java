@@ -48,7 +48,7 @@ public class WordExporter {
 
 	    XWPFDocument doc = new XWPFDocument();
 
-	    // ===== Title =====
+	    // Title 
 	    XWPFParagraph title = doc.createParagraph();
 	    title.setAlignment(ParagraphAlignment.CENTER);
 	    XWPFRun tr = title.createRun();
@@ -56,7 +56,7 @@ public class WordExporter {
 	    tr.setFontSize(16);
 	    tr.setText("Daily Delivery Missions - " + day);
 
-	    doc.createParagraph(); // blank line
+	    doc.createParagraph(); 
 
 	    try (Connection c = DB.get();
 	         PreparedStatement ps = c.prepareStatement(sql)) {
@@ -85,7 +85,7 @@ public class WordExporter {
 	                    dr.setFontSize(13);
 	                    dr.setText("Driver: " + driver);
 
-	                    // ✅ table with Products column (5 columns)
+	                    //table with Products column (5 columns)
 	                    table = doc.createTable(1, 5);
 	                    XWPFTableRow header = table.getRow(0);
 	                    header.getCell(0).setText("Stop");

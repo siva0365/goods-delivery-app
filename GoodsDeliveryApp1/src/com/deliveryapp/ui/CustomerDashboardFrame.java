@@ -53,7 +53,7 @@ public class CustomerDashboardFrame extends JFrame {
         make.setMaximumSize(topBtnSize);
         prev.setMaximumSize(topBtnSize);
 
-        // Add top buttons (now centered)
+        // Add top buttons
         center.add(make);
         center.add(Box.createVerticalStrut(25));
         center.add(prev);
