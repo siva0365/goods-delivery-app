@@ -183,7 +183,8 @@ public class AssignRouteDialog extends JDialog {
         Object[] a = new Object[]{
                 selectedTM.getValueAt(row,0),
                 selectedTM.getValueAt(row,1),
-                selectedTM.getValueAt(row,2)
+                selectedTM.getValueAt(row,2),
+                selectedTM.getValueAt(row,3)
         };
         selectedTM.removeRow(row);
         selectedTM.insertRow(newRow, a);
