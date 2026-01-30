@@ -49,7 +49,7 @@ public class EditProfileDialog extends JDialog {
         form.add(labeled("First Name", first));
         form.add(labeled("Last Name", last));
 
-     // ✅ Compact truck panel: 2 rows (label + field on same line) so it fits and is editable
+     // Compact truck panel: 2 rows (label + field on same line) so it fits and is editable
         truckPanel.removeAll();
         truckPanel.setBorder(BorderFactory.createTitledBorder("Truck Details (Driver Only)"));
 
